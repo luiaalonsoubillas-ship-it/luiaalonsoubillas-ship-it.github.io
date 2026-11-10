@@ -192,10 +192,10 @@ footer p { color: var(--muted); margin: 0 0 20px; }
       <span class="result">Built with a former regulator</span>
     </div>
     <div class="grid3 grid2">
-      <div><h4>The problem</h4><p>Something happens: a major contract, a lawsuit, a sanction. The listed company then has a short legal window to decide whether it is material and must be disclosed. Get it wrong and the regulator can fine them. Today that judgment sits with a handful of scarce experts.</p></div>
-      <div><h4>What it does</h4><p>Vigía turns a last-minute scramble into one shared workflow. When an event is reported, the agent analyzes it against the regulation and recommends whether to disclose, citing the exact articles behind the call. Legal, finance and investor relations work off a single record. The agent drafts the filing for the regulator. And every step leaves an audit trail: who decided what, when, and under which rule.</p></div>
-      <div><h4>The key design choice</h4><p>The model does not decide on its own. The agent proposes: it reads the event and fills a structured assessment. Deterministic rules decide: the materiality thresholds live in code, not in the prompt. A human signs. This keeps the regulatory logic auditable and the final call where the law puts it, with the company's officers.</p></div>
-      <div><h4>How it's evaluated</h4><p>Tested against real disclosure cases labeled by a domain expert. A keyword baseline gets fewer than half right. That is proof the task takes judgment, not search, and it sets the bar the agent has to clear.</p></div>
+      <div><h4>The problem</h4><p>A major contract, a lawsuit, a sanction: a listed company has a short legal window to decide if it must be disclosed. Get it wrong and the regulator fines them.</p></div>
+      <div><h4>What it does</h4><p>Analyzes the event against the regulation, recommends whether to disclose citing the exact articles, and drafts the filing. Legal, finance and IR work off one record, with a full audit trail.</p></div>
+      <div><h4>The key design choice</h4><p>The agent proposes, deterministic rules decide, a human signs. Materiality thresholds live in code, not in the prompt, so every call is auditable.</p></div>
+      <div><h4>How it's evaluated</h4><p>Tested against real cases labeled by a domain expert. A keyword baseline gets fewer than half right: this takes judgment, not search.</p></div>
     </div>
     <div class="project-foot">
       <div class="tags"><span class="tag">Python</span><span class="tag">n8n</span><span class="tag">RAG</span><span class="tag">Rules engine</span><span class="tag">Evals</span></div>
