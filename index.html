@@ -186,18 +186,18 @@ footer p { color: var(--muted); margin: 0 0 20px; }
     <div class="project-head">
       <div>
         <h3>Material Event Disclosure Agent</h3>
-        <div class="kicker">Helps Latin American public companies decide what they must disclose to the regulator</div>
+        <div class="kicker">Helps public companies in Latin America know what they must disclose to the regulator, before the deadline</div>
       </div>
-      <span class="result">In development</span>
+      <span class="result">Built with a regulation expert</span>
     </div>
     <div class="grid3">
-      <div><h4>Problem</h4><p>Listed companies in Peru must decide quickly whether an event is material and report it. The call is judgment-heavy and depends on scarce experts.</p></div>
-      <div><h4>What I built</h4><p>An agent proposes the assessment; a deterministic rules engine turns it into an auditable verdict. Retrieval over the regulation, chunked by article, with a citation guardrail.</p></div>
-      <div><h4>How it's evaluated</h4><p>An eval harness scored against 20 real cases labeled by a domain expert. A keyword baseline sets the floor at 35% accuracy for the agent to beat.</p></div>
+      <div><h4>Problem</h4><p>When something happens (a new contract, a lawsuit, a sanction), a listed company has a tight legal deadline to decide whether it's material and disclose it. Get it wrong and the regulator can sanction them. Today that call depends on a few scarce experts.</p></div>
+      <div><h4>What I built</h4><p>An AI agent that reads the event, finds the relevant articles of the regulation, and recommends: disclose, don't disclose, or escalate to an expert. Every recommendation cites the article behind it, and fixed rules apply the legal thresholds, so the answer is auditable, not a black box.</p></div>
+      <div><h4>How it's evaluated</h4><p>Tested against real disclosure cases labeled by a domain expert in regulation. A simple keyword approach gets only 35% right, which shows this takes judgment, not search, and sets the bar the agent has to beat.</p></div>
     </div>
     <div class="project-foot">
       <div class="tags"><span class="tag">Python</span><span class="tag">n8n</span><span class="tag">RAG</span><span class="tag">Rules engine</span><span class="tag">Evals</span></div>
-      <span class="note">Built with a domain expert. Architecture shared; code private.</span>
+      <span class="note">Architecture shared; code private.</span>
     </div>
   </article>
 
