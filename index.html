@@ -93,6 +93,7 @@ section > h2 { font-size: 28px; margin-bottom: 8px; }
 .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .grid3 h4 { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 6px; font-weight: 600; }
 .grid3 p { margin: 0; font-size: 15px; }
+.grid3.grid2 { grid-template-columns: repeat(2, 1fr); row-gap: 24px; }
 .project-foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); }
 .tags { display: flex; gap: 6px; flex-wrap: wrap; }
 .tag { background: var(--tag); color: var(--muted); font-size: 12.5px; padding: 3px 10px; border-radius: 6px; }
@@ -120,7 +121,7 @@ footer p { color: var(--muted); margin: 0 0 20px; }
   nav .links a.hide-sm { display: none; }
   header.hero { padding: 56px 0 40px; }
   .stats { grid-template-columns: repeat(2, 1fr); }
-  .grid3, .principles { grid-template-columns: 1fr; gap: 14px; }
+  .grid3, .grid3.grid2, .principles { grid-template-columns: 1fr; gap: 14px; }
   .project { padding: 20px; }
   .timeline li { grid-template-columns: 1fr; gap: 2px; }
 }
@@ -185,15 +186,16 @@ footer p { color: var(--muted); margin: 0 0 20px; }
   <article class="project">
     <div class="project-head">
       <div>
-        <h3>AI Compliance Agent for Public Companies</h3>
-        <div class="kicker">Helps public companies in Latin America know what they must disclose to the regulator, before the deadline</div>
+        <h3>Vigía, AI disclosure agent for public companies</h3>
+        <div class="kicker">Helps listed companies in Latin America decide what they must disclose to the regulator, and before the deadline</div>
       </div>
-      <span class="result">Built with a regulation expert</span>
+      <span class="result">Built with a former regulator</span>
     </div>
-    <div class="grid3">
-      <div><h4>Problem</h4><p>When something happens (a new contract, a lawsuit, a sanction), a listed company has a tight legal deadline to decide whether it's material and disclose it. Get it wrong and the regulator can sanction them. Today that call depends on a few scarce experts.</p></div>
-      <div><h4>What it does</h4><p>Turns disclosure into one shared workflow. The agent analyzes the event against the regulation and recommends whether to disclose, citing the articles behind it. Legal, finance and investor relations align on a single record, the agent drafts the filing for the regulator, and every decision keeps a full audit trail: who decided what, when, and based on which rule.</p></div>
-      <div><h4>How it's evaluated</h4><p>Tested against real disclosure cases labeled by a domain expert in regulation. A simple keyword approach gets only 35% right, which shows this takes judgment, not search, and sets the bar the agent has to beat.</p></div>
+    <div class="grid3 grid2">
+      <div><h4>The problem</h4><p>Something happens: a major contract, a lawsuit, a sanction. The listed company then has a short legal window to decide whether it is material and must be disclosed. Get it wrong and the regulator can fine them. Today that judgment sits with a handful of scarce experts.</p></div>
+      <div><h4>What it does</h4><p>Vigía turns a last-minute scramble into one shared workflow. When an event is reported, the agent analyzes it against the regulation and recommends whether to disclose, citing the exact articles behind the call. Legal, finance and investor relations work off a single record. The agent drafts the filing for the regulator. And every step leaves an audit trail: who decided what, when, and under which rule.</p></div>
+      <div><h4>The key design choice</h4><p>The model does not decide on its own. The agent proposes: it reads the event and fills a structured assessment. Deterministic rules decide: the materiality thresholds live in code, not in the prompt. A human signs. This keeps the regulatory logic auditable and the final call where the law puts it, with the company's officers.</p></div>
+      <div><h4>How it's evaluated</h4><p>Tested against real disclosure cases labeled by a domain expert. A keyword baseline gets fewer than half right. That is proof the task takes judgment, not search, and it sets the bar the agent has to clear.</p></div>
     </div>
     <div class="project-foot">
       <div class="tags"><span class="tag">Python</span><span class="tag">n8n</span><span class="tag">RAG</span><span class="tag">Rules engine</span><span class="tag">Evals</span></div>
