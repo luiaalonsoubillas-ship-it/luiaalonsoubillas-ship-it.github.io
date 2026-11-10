@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luis Alonso Ubillas</title>
+<meta name="description" content="Founder-operator who builds AI. Co-founder of Kurios (YC S21). AI agents, retrieval, and evals for real business workflows.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #fbfaf7;
+  --surface: #ffffff;
+  --text: #1c1b19;
+  --muted: #5f5b54;
+  --line: #e6e2da;
+  --accent: #1f5c4a;
+  --accent-soft: #e4efe9;
+  --tag: #f1eee8;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141513;
+    --surface: #1c1d1b;
+    --text: #ecebe7;
+    --muted: #a9a59d;
+    --line: #2e2f2c;
+    --accent: #7cc4a8;
+    --accent-soft: #1f2e28;
+    --tag: #262724;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141513;
+  --surface: #1c1d1b;
+  --text: #ecebe7;
+  --muted: #a9a59d;
+  --line: #2e2f2c;
+  --accent: #7cc4a8;
+  --accent-soft: #1f2e28;
+  --tag: #262724;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+
+nav {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 56px; }
+nav .name { font-weight: 600; color: var(--text); }
+nav .links { display: flex; gap: 20px; font-size: 14px; }
+nav .links a { color: var(--muted); }
+
+header.hero { padding: 88px 0 56px; }
+.eyebrow { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin: 0 0 16px; }
+h1, h2, h3 { font-family: Fraunces, Georgia, serif; font-weight: 600; line-height: 1.2; margin: 0; }
+h1 { font-size: clamp(34px, 6vw, 52px); letter-spacing: -0.01em; }
+.lede { font-size: 19px; color: var(--muted); max-width: 640px; margin: 20px 0 28px; }
+.cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn { display: inline-block; padding: 10px 18px; border-radius: 8px; font-weight: 500; font-size: 15px; border: 1px solid var(--line); color: var(--text); background: var(--surface); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.btn:hover { text-decoration: none; opacity: .9; }
+
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; margin: 8px 0 72px; }
+.stat { background: var(--surface); padding: 20px; }
+.stat b { display: block; font-family: Fraunces, Georgia, serif; font-size: 26px; font-weight: 600; }
+.stat span { font-size: 13px; color: var(--muted); }
+
+section { padding: 0 0 72px; }
+section > h2 { font-size: 28px; margin-bottom: 8px; }
+.section-sub { color: var(--muted); margin: 0 0 28px; }
+
+.project { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 28px; margin-bottom: 20px; }
+.project-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+.project h3 { font-size: 22px; }
+.project .kicker { font-size: 14px; color: var(--muted); margin-top: 4px; }
+.result { background: var(--accent-soft); color: var(--accent); font-weight: 600; font-size: 14px; padding: 6px 12px; border-radius: 999px; white-space: nowrap; }
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.grid3 h4 { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 6px; font-weight: 600; }
+.grid3 p { margin: 0; font-size: 15px; }
+.project-foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); }
+.tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.tag { background: var(--tag); color: var(--muted); font-size: 12.5px; padding: 3px 10px; border-radius: 6px; }
+.note { font-size: 13.5px; color: var(--muted); }
+
+.principles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.principle { border-left: 3px solid var(--accent); padding: 4px 0 4px 16px; }
+.principle b { display: block; margin-bottom: 4px; }
+.principle p { margin: 0; color: var(--muted); font-size: 15px; }
+
+.timeline { list-style: none; padding: 0; margin: 0; }
+.timeline li { display: grid; grid-template-columns: 140px 1fr; gap: 20px; padding: 16px 0; border-top: 1px solid var(--line); }
+.timeline li:last-child { border-bottom: 1px solid var(--line); }
+.timeline .when { color: var(--muted); font-size: 14px; }
+.timeline .what b { display: block; }
+.timeline .what span { color: var(--muted); font-size: 15px; }
+
+footer { border-top: 1px solid var(--line); padding: 40px 0 56px; }
+footer h2 { font-size: 26px; margin-bottom: 10px; }
+footer p { color: var(--muted); margin: 0 0 20px; }
+.small { font-size: 13px; color: var(--muted); margin-top: 32px; }
+
+@media (max-width: 720px) {
+  nav .links { gap: 14px; }
+  nav .links a.hide-sm { display: none; }
+  header.hero { padding: 56px 0 40px; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .grid3, .principles { grid-template-columns: 1fr; gap: 14px; }
+  .project { padding: 20px; }
+  .timeline li { grid-template-columns: 1fr; gap: 2px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="name" href="#">Luis Alonso Ubillas</a>
+    <div class="links">
+      <a href="#projects">Projects</a>
+      <a href="#approach" class="hide-sm">Approach</a>
+      <a href="#background">Background</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<header class="hero">
+  <p class="eyebrow">Founder-operator · Builds with AI</p>
+  <h1>I turn messy business workflows into AI systems people can trust.</h1>
+  <p class="lede">I co-founded Kurios (YC S21) and led strategy, product, and operations for enterprise clients across 8 countries. Today I build AI agents hands-on: multi-agent pipelines, retrieval agents, and the evals that show whether they actually work.</p>
+  <div class="cta">
+    <a class="btn primary" href="#projects">See projects</a>
+    <a class="btn" href="https://www.linkedin.com/in/lubillas" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><b>YC S21</b><span>Co-founder, Kurios</span></div>
+  <div class="stat"><b>8</b><span>Countries served</span></div>
+  <div class="stat"><b>10,000+</b><span>Learners in custom programs</span></div>
+  <div class="stat"><b>~2 hours</b><span>Proposal turnaround, down from ~1 week</span></div>
+</div>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <p class="section-sub">Each one starts from a real business decision, not a demo.</p>
+
+  <article class="project">
+    <div class="project-head">
+      <div>
+        <h3>Content Factory</h3>
+        <div class="kicker">Multi-agent pipeline for enterprise proposals and program content</div>
+      </div>
+      <span class="result">~1 week → ~2 hours</span>
+    </div>
+    <div class="grid3">
+      <div><h4>Problem</h4><p>Every enterprise proposal was custom, and building one took about a week of senior time.</p></div>
+      <div><h4>What I built</h4><p>A 9-agent Claude Code pipeline that structures our curriculum know-how into proposals and content, with human checkpoints and an eval harness.</p></div>
+      <div><h4>Result</h4><p>Turnaround cut from about a week to about two hours, and roughly 90% lower cost per proposal.</p></div>
+    </div>
+    <div class="project-foot">
+      <div class="tags"><span class="tag">Claude Code</span><span class="tag">Subagents</span><span class="tag">Human-in-the-loop</span><span class="tag">Evals</span></div>
+      <span class="note">Case study only. Code and content are company IP.</span>
+    </div>
+  </article>
+
+  <article class="project">
+    <div class="project-head">
+      <div>
+        <h3>Material Event Disclosure Agent</h3>
+        <div class="kicker">Helps Latin American public companies decide what they must disclose to the regulator</div>
+      </div>
+      <span class="result">In development</span>
+    </div>
+    <div class="grid3">
+      <div><h4>Problem</h4><p>Listed companies in Peru must decide quickly whether an event is material and report it. The call is judgment-heavy and depends on scarce experts.</p></div>
+      <div><h4>What I built</h4><p>An agent proposes the assessment; a deterministic rules engine turns it into an auditable verdict. Retrieval over the regulation, chunked by article, with a citation guardrail.</p></div>
+      <div><h4>How it's evaluated</h4><p>An eval harness scored against 20 real cases labeled by a domain expert. A keyword baseline sets the floor at 35% accuracy for the agent to beat.</p></div>
+    </div>
+    <div class="project-foot">
+      <div class="tags"><span class="tag">Python</span><span class="tag">n8n</span><span class="tag">RAG</span><span class="tag">Rules engine</span><span class="tag">Evals</span></div>
+      <span class="note">Built with a domain expert. Architecture shared; code private.</span>
+    </div>
+  </article>
+
+  <article class="project">
+    <div class="project-head">
+      <div>
+        <h3>Contract Review Agent</h3>
+        <div class="kicker">Upload a contract and ask an agent about its risks and clauses. Built during an applied AI product program.</div>
+      </div>
+      <span class="result">v1 → v2</span>
+    </div>
+    <div class="grid3">
+      <div><h4>Problem</h4><p>Reviewing a contract for key terms and risks is slow, and generic chatbots answer without pointing to the source.</p></div>
+      <div><h4>Version 1</h4><p>A web app connected to an n8n agent. It extracts the full text of the PDF and sends all of it to the model with each question. Simple, but it slows down and loses focus on long contracts.</p></div>
+      <div><h4>Version 2: agentic RAG</h4><p>Contracts are split into chunks, embedded, and stored in a vector store. The agent uses that store as a tool, deciding when to search and answering from the relevant passages only.</p></div>
+    </div>
+    <div class="project-foot">
+      <div class="tags"><span class="tag">n8n</span><span class="tag">Agentic RAG</span><span class="tag">Vector store</span><span class="tag">OpenAI embeddings</span></div>
+    </div>
+  </article>
+</section>
+
+<section id="approach">
+  <h2>How I build</h2>
+  <p class="section-sub">What years of enterprise delivery taught me about getting AI into production.</p>
+  <div class="principles">
+    <div class="principle"><b>Start from the decision</b><p>Name the one decision or task the system must improve, and who owns it, before choosing any model.</p></div>
+    <div class="principle"><b>Ground every answer</b><p>Retrieve from real sources and cite them. If the system can't point to evidence, it shouldn't answer.</p></div>
+    <div class="principle"><b>Evals before scale</b><p>Build an answer key with the experts first, measure against a simple baseline, then expand.</p></div>
+    <div class="principle"><b>Humans at the checkpoints</b><p>Keep people where the cost of a mistake is high, and automate the rest.</p></div>
+  </div>
+</section>
+
+<section id="background">
+  <h2>Background</h2>
+  <p class="section-sub">Operator first, builder by habit.</p>
+  <ul class="timeline">
+    <li><span class="when">2018 – present</span><span class="what"><b>Co-founder, Kurios (YC S21)</b><span>Head of Strategy, Product &amp; Operations. Enterprise learning and AI programs for banks, insurers, fintechs, and retailers across Latin America and Canada.</span></span></li>
+    <li><span class="when">2016 – 2017</span><span class="what"><b>Amazon</b><span>Senior Financial Analyst for a $5B+ US retail and marketplace business.</span></span></li>
+    <li><span class="when">2015</span><span class="what"><b>J.P. Morgan Private Bank</b><span>Summer Associate, Latin America group.</span></span></li>
+    <li><span class="when">2008 – 2014</span><span class="what"><b>Credicorp</b><span>Investment management and equity research. Managed $350M in institutional portfolios.</span></span></li>
+    <li><span class="when">Education</span><span class="what"><b>MBA, University of Michigan Ross</b><span>Passed CFA Level II. Bilingual Spanish and English.</span></span></li>
+  </ul>
+</section>
+
+</div>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Let's talk</h2>
+    <p>Based in Seattle. Interested in roles where AI meets enterprise customers and real operations.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:lubillas@umich.edu">lubillas@umich.edu</a>
+      <a class="btn" href="https://www.linkedin.com/in/lubillas" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <p class="small">© 2026 Luis Alonso Ubillas</p>
+  </div>
+</footer>
+
+</body>
+</html>
